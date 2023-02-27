@@ -21,7 +21,7 @@ class ListingsTest < ApplicationSystemTestCase
     fill_in "Pet types", with: @listing.pet_types
     fill_in "Place type", with: @listing.place_type
     fill_in "Price per night", with: @listing.price_per_night
-    fill_in "User id", with: @listing.user_id_id
+    fill_in "User", with: @listing.user_id
     click_on "Create Listing"
 
     assert_text "Listing was successfully created"
@@ -39,7 +39,7 @@ class ListingsTest < ApplicationSystemTestCase
     fill_in "Pet types", with: @listing.pet_types
     fill_in "Place type", with: @listing.place_type
     fill_in "Price per night", with: @listing.price_per_night
-    fill_in "User id", with: @listing.user_id_id
+    fill_in "User", with: @listing.user_id
     click_on "Update Listing"
 
     assert_text "Listing was successfully updated"
