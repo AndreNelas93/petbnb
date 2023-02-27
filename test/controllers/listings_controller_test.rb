@@ -17,7 +17,7 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create listing" do
     assert_difference("Listing.count") do
-      post listings_url, params: { listing: { address: @listing.address, description: @listing.description, max_occupancy: @listing.max_occupancy, max_stay: @listing.max_stay, pet_types: @listing.pet_types, place_type: @listing.place_type, price_per_night: @listing.price_per_night, user_id_id: @listing.user_id_id } }
+      post listings_url, params: { listing: { address: @listing.address, description: @listing.description, max_occupancy: @listing.max_occupancy, max_stay: @listing.max_stay, pet_types: @listing.pet_types, place_type: @listing.place_type, price_per_night: @listing.price_per_night, user_id: @listing.user_id } }
     end
 
     assert_redirected_to listing_url(Listing.last)
@@ -34,7 +34,7 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update listing" do
-    patch listing_url(@listing), params: { listing: { address: @listing.address, description: @listing.description, max_occupancy: @listing.max_occupancy, max_stay: @listing.max_stay, pet_types: @listing.pet_types, place_type: @listing.place_type, price_per_night: @listing.price_per_night, user_id_id: @listing.user_id_id } }
+    patch listing_url(@listing), params: { listing: { address: @listing.address, description: @listing.description, max_occupancy: @listing.max_occupancy, max_stay: @listing.max_stay, pet_types: @listing.pet_types, place_type: @listing.place_type, price_per_night: @listing.price_per_night, user_id: @listing.user_id } }
     assert_redirected_to listing_url(@listing)
   end
 
