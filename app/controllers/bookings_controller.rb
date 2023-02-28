@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :set_listing, only:[:new, :create]
   def index
     @bookings = Booking.where(user_id: current_user)
   end
@@ -13,18 +14,23 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.listing_id = @listing
-    @booking.user_id = current_user
+    @booking.listing = @listing
+    @booking.user = current_user
+    @booking.total_price = (@booking.end_date.to_date - @booking.start_date.to_date) * @listing.price_per_night
     if @booking.save
-      redirect_to listings_path
+      redirect_to bookings_path(@booking)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   private
 
+  def set_listing
+    @listing = Listing.find(params[:listing_id])
+  end
+
   def booking_params
-    params.require(:booking).permit(:num_of_pets, :pet_type, :start_date, :end_date, :total_price, :user_id, :listing_id)
+    params.require(:booking).permit(:num_of_pets, :pet_type, :start_date, :end_date)
   end
 end
