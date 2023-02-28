@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_180109) do
   end
 
   create_table "listings", force: :cascade do |t|
-    t.string "place_type"
+    t.string "title"
     t.string "pet_types"
     t.text "description"
     t.string "address"

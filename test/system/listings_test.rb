@@ -19,7 +19,7 @@ class ListingsTest < ApplicationSystemTestCase
     fill_in "Max occupancy", with: @listing.max_occupancy
     fill_in "Max stay", with: @listing.max_stay
     fill_in "Pet types", with: @listing.pet_types
-    fill_in "Place type", with: @listing.place_type
+    fill_in "Title", with: @listing.
     fill_in "Price per night", with: @listing.price_per_night
     fill_in "User", with: @listing.user_id
     click_on "Create Listing"
@@ -37,7 +37,7 @@ class ListingsTest < ApplicationSystemTestCase
     fill_in "Max occupancy", with: @listing.max_occupancy
     fill_in "Max stay", with: @listing.max_stay
     fill_in "Pet types", with: @listing.pet_types
-    fill_in "Place type", with: @listing.place_type
+    fill_in "Place type", with: @listing.title
     fill_in "Price per night", with: @listing.price_per_night
     fill_in "User", with: @listing.user_id
     click_on "Update Listing"
