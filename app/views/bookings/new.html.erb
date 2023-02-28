@@ -1,0 +1,9 @@
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.input :num_of_pets%>
+  <%= f.input :pet_type %>
+  <%= f.input :start_date, as: :datepicker %>
+  <%= f.input :end_date, as: :datepicker %>
+  <%= f.submit %>
+<% end %>
+
+<p><%= "TO DO @booking.total_price" %></p>
