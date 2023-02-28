@@ -1,9 +1,36 @@
-<%= simple_form_for [@listing, @booking] do |f| %>
-  <%= f.input :num_of_pets%>
-  <%= f.input :pet_type %>
-  <%= f.input :start_date, as: :date, html5: true %>
-  <%= f.input :end_date, as: :date, html5: true %>
-  <%= f.submit %>
-<% end %>
+<p style="color: green"><%= notice %></p>
 
-<p><%= "TO DO @booking.total_price" %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="container">
+        <div class="container text-center my-5">
+          <h1><%= @listing.title %></h1>
+        </div>
+        <div class="container d-flex justify-content-between my-5">
+          <%= link_to "Book now", new_listing_booking_path(@listing), class:"btn btn-outline-success mx-3" %>
+          <%= link_to "Back to listings", listings_path, class:"btn btn-outline-secondary mx-3" %>
+          <% if @listing.user_id == current_user.id %>
+            <%= link_to "Edit this listing", edit_listing_path(@listing), class:"btn btn-outline-secondary mx-3" %>
+            <%= button_to "Destroy this listing", @listing, method: :delete, class:"btn btn-outline-danger mx-3" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 mt-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2>Book now!</h2>
+        </div>
+          <%= simple_form_for [@listing, @booking] do |f| %>
+            <%= f.input :num_of_pets%>
+            <%= f.input :pet_type %>
+            <%= f.input :start_date, as: :date, html5: true %>
+            <%= f.input :end_date, as: :date, html5: true %>
+            <%= f.submit %>
+          <% end %>
+        <p><%= "TO DO @booking.total_price" %></p>
+      </div>
+    </div>
+  </div>
+</div>
