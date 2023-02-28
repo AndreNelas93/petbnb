@@ -1,0 +1,31 @@
+.footer {
+  background: #e6bf4a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0, 0, 0, 0.763);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  color:rgba(80, 79, 79, 0.763);
+}
+.footer .fa-heart {
+  color: #9e0a0a;
+}
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
