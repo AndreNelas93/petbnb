@@ -1,7 +1,5 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @listing %>
-
+<h1><%= @listing.title %></h1>
 <div>
   <%= link_to "Edit this listing", edit_listing_path(@listing) %> |
   <%= link_to "Back to listings", listings_path %>
