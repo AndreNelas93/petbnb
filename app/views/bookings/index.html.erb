@@ -5,13 +5,18 @@
   <hr>
   <div class="card-grid">
     <div>
-      <div class="text-center my-3">
+      <div class="text-center my-4">
         <h3>Your info</h3>
       </div>
       <div class="card">
-        <%= image_tag "dog.png", class:"card-img-top" %>
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, class:"card-img-top" %>
+        <% else %>
+          <%= image_tag "userblanck.webp", class:"card-img-top" %>
+        <% end %>
         <div class="card-body">
-          <h5 class="card-title"><%= current_user.email %></h5>
+          <h5 class="card-title"><%= current_user.name %></h5>
+          <p class="card-text"><%= "Email: #{current_user.email}" %></p>
           <p class="card-text"><%= "Total listings: #{@listings.size}" %></p>
           <p class="card-text"><%= "Total bookings: #{@bookings.size}" %></p>
           <%= link_to "Edit", edit_user_registration_path(current_user), class:"btn btn-sm btn-outline-primary" %>
@@ -20,7 +25,7 @@
     </div>
 
     <div>
-      <div class="text-center my-3">
+      <div class="text-center my-4">
         <h3>Your listings</h3>
       </div>
       <% @listings.each do |listing| %>
@@ -38,7 +43,7 @@
 
 
     <div>
-      <div class="text-center my-3">
+      <div class="text-center my-4">
         <h3>Your bookings</h3>
       </div>
       <div class="list-group">
