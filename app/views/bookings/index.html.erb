@@ -1,11 +1,40 @@
-<h1>Bookings</h1>
-
-<% @bookings.each do |booking| %>
-  <div>
-  <p><%= link_to booking.id, booking_path(booking.id) %></p>
-  <p> Check-in: <%= booking.start_date %> </p>
-  <p> Check-out: <%= booking.end_date %> </p>
-  <p> Petsitter: <%= booking.listing_id %> </p>
-  <p> Total: <%= booking.total_price %>$ </p>
+<div class="container">
+  <div class="container text-center my-5">
+    <h1>Your dashboard</h1>
   </div>
-<% end %>
+  <div class="card-grid">
+    <div>
+      <div class="card">
+        <%= image_tag "dog.png", class:"card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title"><%= current_user.email %></h5>
+          <p class="card-text"><%= "Total listings: #{@listings.size}" %></p>
+          <p class="card-text"><%= "Total bookings: #{@bookings.size}" %></p>
+          <a href="#" class="btn btn-outline-primary">Edit</a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <% @listings.each do |listing| %>
+      <div class="card-product mb-2">
+        <%= image_tag "dog.png", class:"card-img-top" %>
+        <div class="card-product-infos">
+          <h2><%= listing.title %></h2>
+          <p><%= listing.description %></p>
+          <p><%= "#{listing.price_per_night}$/night" %></p>
+        </div>
+        <%= link_to "See listing", new_listing_booking_path(listing), class:"btn btn-sm btn-outline-primary" %>
+      </div>
+      <% end %>
+    </div>
+
+
+    <div>
+      <div class="list-group">
+        <% @bookings.each do |booking| %>
+        <button type="button" class="list-group-item list-group-item-action"><%= booking.listing_id %></button>
+        <% end %>
+      </div>
+    </div>
+</div>
