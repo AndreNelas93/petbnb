@@ -9,7 +9,7 @@
     <% @listings.each do |listing| %>
     <div class="col col-md-3 m-3">
       <div class="card h-100" style="width: 18rem;">
-        <%= image_tag "dog.png", class:"card-img-top" %>
+        <%= cl_image_tag listing.photo.key, crop: :fill %>
         <div class="card-body">
           <h5 class="card-title"><%= listing.title %></h5>
           <p class="card-text"><%= listing.description %></p>
