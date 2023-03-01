@@ -1,8 +1,16 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "/listings", class: "navbar-brand" do %>
+    <div class="d-flex">
+    <div>
+      <%= link_to "/listings", class: "navbar-brand" do %>
       <%= image_tag "dog.png" %>
-    <% end %>
+    </div>
+        <div>
+          <span><p>petbnb</p></span>
+        </div>
+
+      <% end %>
+    </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

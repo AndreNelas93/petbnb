@@ -1,7 +1,8 @@
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 60px;
+  margin-top: 60px;
 }
 
 // Smallest device
