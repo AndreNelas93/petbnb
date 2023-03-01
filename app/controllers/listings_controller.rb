@@ -16,7 +16,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
     if @listing.save
-      redirect_to listing_path(@listing)
+      redirect_to new_listing_booking_path(@listing)
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class ListingsController < ApplicationController
 
   def update
     @listing.update(listing_params)
-    redirect_to listing_path(@listing)
+    redirect_to new_listing_booking_path(@listing)
   end
 
   def destroy
