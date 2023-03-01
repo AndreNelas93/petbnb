@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
   before_action :set_listing, only:[:new, :create]
   def index
-    @bookings = Booking.where(user_id: current_user)
+    @bookings = Booking.where(user_id: current_user.id)
+    @listings = Listing.where(user_id: current_user.id)
   end
 
   def show
