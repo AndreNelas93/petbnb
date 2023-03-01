@@ -1,12 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="container">
-  <div class="row">
-    <div class="col-8">
+  <div class="bookings-grid">
       <div class="container">
         <div class="container text-center my-5">
           <h1><%= @listing.title %></h1>
         </div>
+        <%= cl_image_tag @listing.photo.key, height: 600, width: 800, crop: :fill %>
         <div class="container d-flex justify-content-between my-5">
           <%= link_to "Back to listings", listings_path, class:"btn btn-outline-secondary mx-3" %>
           <% if @listing.user_id == current_user.id %>
@@ -15,21 +15,21 @@
           <% end %>
         </div>
       </div>
-    </div>
-    <div class="col-4 mt-5">
+
       <div class="container">
-        <div class="text-center mb-5">
+        <div class="text-center my-5">
           <h2>Book now!</h2>
         </div>
-          <%= simple_form_for [@listing, @booking] do |f| %>
-            <%= f.input :num_of_pets%>
-            <%= f.input :pet_type, collection: ["Dog", "Cat", "Hamster", "Bunny", "Guinea Pig", "Turtle", "Parakeet", "Iguana", "Arara", "Parrot", "Aligator", "Fishe", "Snake"] %>
-            <%= f.input :start_date, as: :date, html5: true %>
-            <%= f.input :end_date, as: :date, html5: true %>
-            <%= f.submit %>
-          <% end %>
-        <p><%= "TO DO @booking.total_price" %></p>
+        <%= simple_form_for [@listing, @booking] do |f| %>
+          <%= f.input :num_of_pets%>
+          <%= f.input :pet_type, collection: ["Dog", "Cat", "Hamster", "Bunny", "Guinea Pig", "Turtle", "Parakeet", "Iguana", "Arara", "Parrot", "Aligator", "Fishe", "Snake"] %>
+          <%= f.input :start_date, as: :date, html5: true %>
+          <%= f.input :end_date, as: :date, html5: true %>
+          <%= f.submit :Book!, class:"btn btn-outline-success my-3 mx-2"%>
+        <% end %>
       </div>
+
+
     </div>
   </div>
 </div>
