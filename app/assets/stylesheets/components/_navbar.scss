@@ -10,3 +10,34 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar{
+  min-height:90px;
+  transform:translatex(0px) translatey(0px);
+  width: 100vw;
+  z-index: 1;
+  position: sticky;
+  top: 0;
+ }
+
+/* Import Google Fonts */
+@import url("//fonts.googleapis.com/css2?family=Yellowtail:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+/* Image */
+.navbar a img{
+ display:inline-block;
+ width:56px !important;
+}
+
+/* Paragraph */
+.navbar a p{
+ transform:translatex(0px) translatey(11px);
+ font-family:'Yellowtail', handwriting;
+ color:#ecf0f1;
+ text-shadow:rgb(0, 0, 0) 0px 1px 1px, rgb(0, 0, 0) 0px -1px 1px, rgb(0, 0, 0) 1px 0px 1px, rgb(0, 0, 0) -1px 0px 1px;
+ line-height:1em;
+ letter-spacing:4.8px;
+ font-style:normal;
+ text-transform:capitalize;
+ font-size:40px;
+}
