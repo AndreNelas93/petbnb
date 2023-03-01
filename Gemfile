@@ -3,8 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
-# Scaffold
-gem "jbuilder" # Comment this line
+#Cloudinary
+gem "cloudinary"
+
+# Dotenv
+gem "dotenv-rails", groups: [:development, :test]
 
 # Devise
 gem "devise"

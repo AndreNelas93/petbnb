@@ -23,7 +23,7 @@
         </div>
           <%= simple_form_for [@listing, @booking] do |f| %>
             <%= f.input :num_of_pets%>
-            <%= f.input :pet_type %>
+            <%= f.input :pet_type, collection: ["Dog", "Cat", "Hamster", "Bunny", "Guinea Pig", "Turtle", "Parakeet", "Iguana", "Arara", "Parrot", "Aligator", "Fishe", "Snake"] %>
             <%= f.input :start_date, as: :date, html5: true %>
             <%= f.input :end_date, as: :date, html5: true %>
             <%= f.submit %>

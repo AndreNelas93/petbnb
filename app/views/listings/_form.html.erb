@@ -5,7 +5,8 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
-    <%= f.input :pet_types, collection: ["Dogs", "Cats", "Snakes"] %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :pet_types, collection: ["Dogs", "Cats", "Hamsters", "Bunnies", "Guinea Pigs", "Turtles", "Parakeets", "Iguana", "Arara", "Parrots", "Aligators", "Fishes", "Snakes"] %>
     <%= f.input :description %>
     <%= f.input :address %>
     <%= f.input :max_occupancy %>
