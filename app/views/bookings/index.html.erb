@@ -4,17 +4,10 @@
   </div>
   <hr>
   <div class="card-grid">
-    <div class="text-center my-3">
-      <h3>Your info</h3>
-    </div>
-        <div class="text-center my-3">
-      <h3>Your listings</h3>
-    </div>
-        <div class="text-center my-3">
-      <h3>Your bookings</h3>
-    </div>
-
     <div>
+      <div class="text-center my-3">
+        <h3>Your info</h3>
+      </div>
       <div class="card">
         <%= image_tag "dog.png", class:"card-img-top" %>
         <div class="card-body">
@@ -27,21 +20,27 @@
     </div>
 
     <div>
+      <div class="text-center my-3">
+        <h3>Your listings</h3>
+      </div>
       <% @listings.each do |listing| %>
       <div class="card-product mb-2">
         <%= image_tag "dog.png", class:"card-img-top" %>
-        <div class="card-product-infos">
+        <div class="card-product-infos mx-3">
           <h2><%= listing.title %></h2>
           <p><%= listing.description %></p>
           <p><%= "#{listing.price_per_night}$/night" %></p>
+          <p><%= link_to "See listing", new_listing_booking_path(listing) %></p>
         </div>
-        <%= link_to "See listing", new_listing_booking_path(listing), class:"btn btn-sm btn-outline-primary" %>
       </div>
       <% end %>
     </div>
 
 
     <div>
+      <div class="text-center my-3">
+        <h3>Your bookings</h3>
+      </div>
       <div class="list-group">
         <% @bookings.each do |booking| %>
         <% listing = Listing.find(booking.listing_id) %>
@@ -68,4 +67,5 @@
         <% end %>
       </div>
     </div>
+  </div>
 </div>
