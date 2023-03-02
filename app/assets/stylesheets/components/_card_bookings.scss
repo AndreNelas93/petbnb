@@ -77,7 +77,9 @@
   border-radius: 25px;
  }
 
-
+ .h3-header {
+  transform:translatex(0px) translatey(0px) !important;
+ }
 
 
 
@@ -94,4 +96,9 @@
  .card-grid .card-mylistings .card-product{
   margin-bottom:0px !important;
   height:134px;
+ }
+
+
+ .listings-bookings {
+  margin-top: 33px;
  }
