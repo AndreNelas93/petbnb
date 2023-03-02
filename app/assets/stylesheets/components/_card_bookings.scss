@@ -1,0 +1,79 @@
+.card-image-booking {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.card-booking {
+  border-radius: 25px;
+}
+
+.card-mybooking {
+  border-radius: 25px;
+}
+
+.card-mylistings {
+  text-decoration: none;
+  color: black;
+}
+
+.card-mylistings:hover {
+  color: black;
+}
+
+.card-myinfo {
+  border-radius: 25px;
+  text-decoration: none;
+  color: black;
+}
+
+
+/* Card product */
+.card-grid .card-myinfo .card-product{
+  width:628px;
+  min-height:324px;
+  transform:translatex(0px) translatey(0px);
+ }
+
+ /* Image */
+ .card-myinfo .card-product img{
+  width:330px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+ }
+
+ /* Card profile body */
+ .card-myinfo .card-product .card-profile-body{
+  transform:translatex(18px) translatey(-72px);
+  text-align:left;
+ }
+
+ /* Heading */
+ .card-myinfo .card-product h5{
+  text-align:left;
+  font-size:33px;
+ }
+
+ /* Paragraph */
+ .card-myinfo .card-product p{
+  font-size:16px;
+ }
+
+ /* Card product */
+.card-grid .card-mylistings .card-product{
+  width:445px;
+  transform:translatex(148px) translatey(-57px);
+  min-height:134px;
+ }
+
+ .card-grid div li{
+  transform:translatex(153px) translatey(-58px);
+ }
+
+ .card-grid div h3{
+  transform:translatex(150px) translatey(-51px);
+ }
+
+ .card-myinfo .card-product {
+  border-radius: 25px;
+ }
+

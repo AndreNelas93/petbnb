@@ -1,52 +1,52 @@
 <div class="container">
   <div class="container text-center my-5">
-    <h3>Your dashboard</h3>
+    <h3>My Dashboard</h3>
   </div>
   <hr>
   <div class="card-grid">
     <div>
       <div class="text-center my-4">
-        <h3>Your info</h3>
       </div>
-      <div class="card">
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, class:"card-img-top" %>
-        <% else %>
-          <%= image_tag "userblanck.webp", class:"card-img-top" %>
-        <% end %>
-        <div class="card-body">
+      <a class="card-myinfo" href="<%= edit_user_registration_path(current_user) %>">
+        <div class="card-product">
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class:"card-img-top" %>
+          <% else %>
+            <%= image_tag "userblanck.webp", class:"card-img-top" %>
+            <% end %>
+        <div class="card-profile-body">
           <h5 class="card-title"><%= current_user.name %></h5>
           <p class="card-text"><%= "Email: #{current_user.email}" %></p>
           <p class="card-text"><%= "Total listings: #{@listings.size}" %></p>
-          <p class="card-text"><%= "Total bookings: #{@bookings.size}" %></p>
-          <%= link_to "Edit", edit_user_registration_path(current_user), class:"btn btn-sm btn-outline-primary" %>
+        <p class="card-text"><%= "Total bookings: #{@bookings.size}" %></p>
         </div>
       </div>
+      </a>
     </div>
+
+
 
     <div>
       <div class="text-center my-4">
-        <h3>Your listings</h3>
+        <h3>My Listings</h3>
       </div>
       <% @listings.each do |listing| %>
-      <div class="card-product mb-2">
-        <%= image_tag "dog.png", class:"card-img-top" %>
-        <div class="card-product-infos mx-3">
-          <h2><%= listing.title %></h2>
-          <p><%= listing.description %></p>
-          <p><%= "#{listing.price_per_night}$/night" %></p>
-          <p><%= link_to "See listing", new_listing_booking_path(listing) %></p>
-        </div>
-      </div>
+        <a class="card-mylistings" href="<%= new_listing_booking_path(listing) %>">
+          <div class="card-product mb-2 card-booking">
+            <%= cl_image_tag listing.photo.key, crop: :fill, class:"card-image-booking" %>
+            <div class="card-product-infos mx-3">
+              <h2><%= listing.title %></h2>
+              <p><%= listing.description %></p>
+              <p><%= "#{listing.price_per_night}$/night" %></p>
+            </div>
+          </div>
+        </a>
       <% end %>
-    </div>
 
-
-    <div>
       <div class="text-center my-4">
-        <h3>Your bookings</h3>
+        <h3>My Bookings</h3>
       </div>
-      <div class="list-group">
+      <div class="list-group card-mybooking">
         <% @bookings.each do |booking| %>
         <% listing = Listing.find(booking.listing_id) %>
         <% start_date = booking.start_date.strftime("%d/%b") %>
