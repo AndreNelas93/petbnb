@@ -39,6 +39,51 @@
 }
 
 .card-image {
+  height: 280px;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
+}
+
+/* Card body */
+.card-grid div .card-body{
+  min-height:243px;
+  height:243px;
+ }
+
+ /* Import Google Fonts */
+@import url("//fonts.googleapis.com/css2?family=Noto+Sans+TC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("//fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+/* Heading */
+.card-grid a h5{
+ color:#212121;
+ font-weight:700;
+ font-family:'Noto Sans TC', sans-serif;
+ text-align:left;
+ font-size:19px;
+ min-height:41px;
+ margin-bottom:0px;
+}
+
+/* Paragraph */
+.card-grid a p{
+ color:#0f1215;
+ transform:translatex(0px) translatey(0px);
+ text-align:justify;
+}
+
+/* Card grid */
+.container .card-grid{
+ transform:translatex(0px) translatey(0px);
+}
+
+/* Heading */
+.card-grid a h4{
+ font-family:'Noto Sans', sans-serif;
+ color:#232328 !important;
+}
+
+/* Flex */
+.card-grid a .d-flex{
+ transform:translatex(0px) translatey(0px);
 }
