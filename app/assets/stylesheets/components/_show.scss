@@ -1,13 +1,18 @@
 .custom-btn {
-  background-color: #16d1c8c8;
+  background-color: #06BEB6;
   width: 100%;
 }
 
 .custom-btn:hover{
-  border: #16d1c8 solid 2px;
-  color: #16d1c8;
+  border: #06BEB6 solid 2px;
+  color: #06BEB6;
 }
 
 .form-select {
   margin: 0 !important;
+}
+
+.btn-primary:hover {
+  background-color: #47B1BE;
+  color: white;
 }
