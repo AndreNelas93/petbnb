@@ -6,20 +6,23 @@
         <div class="container text-center my-5">
           <h1><%= @listing.title %></h1>
         </div>
-        <%= cl_image_tag @listing.photo.key, height: 600, width: 800, crop: :fill %>
-        <div class="container d-flex justify-content-between my-5 px-0">
-          <%= link_to "Back to listings", listings_path, class:"btn btn-outline-secondary" %>
+        <%= cl_image_tag @listing.photo.key, height: 600, width: 800, crop: :fill, class:"listing-image" %>
           <% if @listing.user_id == current_user.id %>
-            <%= link_to "Edit this listing", edit_listing_path(@listing), class:"btn btn-outline-secondary mx-3" %>
-            <%= button_to "Destroy this listing", @listing, method: :delete, class:"btn btn-outline-danger mx-3" %>
+            <div class="container d-flex justify-content-around my-5 px-0">
+              <%= link_to "Back to listings", listings_path, class:"btn btn-outline-secondary" %>
+              <%= link_to "Edit this listing", edit_listing_path(@listing), class:"btn btn-outline-secondary mx-3" %>
+              <%= button_to "Destroy this listing", @listing, method: :delete, class:"btn btn-outline-danger mx-3" %>
+            </div>
+          <% else %>
+            <div class="container d-flex my-5 px-0">
+              <%= link_to "Back to listings", listings_path, class:"btn btn-outline-secondary" %>
+            </div>
           <% end %>
-        </div>
       </div>
 
       <div class="container">
         <div class="text-center my-5">
-          <h2>Book now!</h2>
-        </div>
+        <div class="container_booking">
         <div class="form-container">
           <%= simple_form_for [@listing, @booking] do |f| %>
             <%= f.input :num_of_pets%>
