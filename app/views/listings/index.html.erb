@@ -7,7 +7,7 @@
 <div class="card-grid">
   <% @listings.each do |listing| %>
   <div class="center-card">
-    <a href="<%= new_listing_path(listing) %>" onclick="event.stopPropagation()"  style="text-decoration: none;">
+    <a href="<%= listing_path(listing) %>" onclick="event.stopPropagation()"  style="text-decoration: none;">
       <div class="card h-100 card-border" style="width: 18rem;">
         <%= cl_image_tag listing.photo.key, crop: :fill, class:"card-image" %>
         <div class="card-body">
