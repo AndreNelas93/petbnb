@@ -9,6 +9,13 @@
 @media (min-width: 100px) and (max-width: 575px) {
   .card-grid {
     grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
+  .center-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -17,10 +24,15 @@
   .card-grid {
     grid-template-columns: 1fr;
   }
+  .center-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+@media (min-width: 715px) {
   .card-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -34,7 +46,7 @@
 }
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .card-grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }

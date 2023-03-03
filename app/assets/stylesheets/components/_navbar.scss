@@ -9,12 +9,12 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-  transform:translatex(26px) translatey(0px);
+
 }
 
 .navbar{
   min-height:90px;
-  transform:translatex(0px) translatey(0px);
+
   width: 100vw;
   z-index: 1;
   position: sticky;
@@ -26,14 +26,14 @@
 
 /* Image */
 .navbar a img{
- transform:translatex(91px) translatey(0px) !important;
+
  display:inline-block;
  width:56px !important;
 }
 
 /* Paragraph */
 .navbar a p{
- transform:translatex(89px) translatey(11px);
+
  font-family:'Yellowtail', handwriting;
  color:#ecf0f1;
  text-shadow:rgb(0, 0, 0) 0px 1px 1px, rgb(0, 0, 0) 0px -1px 1px, rgb(0, 0, 0) 1px 0px 1px, rgb(0, 0, 0) -1px 0px 1px;
@@ -42,18 +42,24 @@
  font-style:normal;
  text-transform:capitalize;
  font-size:40px;
+ margin: 8px 0px 8px 0px;
 }
 
 /* Import Google Fonts */
 @import url("//fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 /* Nav link */
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar-nav .nav-item .nav-link{
- transform:translatex(-15px) translatey(6px);
+
  color:#ffffff;
- text-shadow:rgba(0, 0, 0, 0.3) 0px 1px 1px;
+ text-shadow:rgba(0, 0, 0, 0.2) 0px 1px 1px;
  font-family:'Noto Sans', sans-serif;
- transform:translatex(-30px) translatey(3px);
 }
 
 .navbar-nav .nav-item .nav-link:hover {
@@ -64,13 +70,19 @@ text-decoration: none;
  /* Navbar Unknowndown */
  #navbarDropdown{
   display:inline-block;
-  transform:translatex(-10px) translatey(0px);
   min-height:48px;
   margin-left:10px;
+  margin-right: 10px;
   width:55px;
  }
 
- /* List */
- #navbarSupportedContent ul{
-  transform:translatex(-100px) translatey(3px);
+ #navbarDropdown:hover {
+  transition: 0.2;
+  transform: scale(101%);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
  }
+
+ /* List */
+//  #navbarSupportedContent ul {
+
+//  }
