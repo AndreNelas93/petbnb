@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'reviews/create'
+ 
   get 'reviews/destroy'
   resources :listings do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[create]
+    resources :reviews, only: %i[create]
   end
   resources :bookings, only: %i[index show]
   devise_for :users

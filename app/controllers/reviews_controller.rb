@@ -2,8 +2,9 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @listing = List.find(params[:listing_id])
+    @listing = Listing.find(params[:listing_id])
     @review.listing = @listing
+    @review.user = current_user
     if @review.save
       redirect_to listing_path(@listing)
     else
