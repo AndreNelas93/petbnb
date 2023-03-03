@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reviews/create'
+  get 'reviews/destroy'
   resources :listings do
     resources :bookings, only: %i[new create]
   end
