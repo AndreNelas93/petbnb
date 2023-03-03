@@ -1,8 +1,62 @@
 <p style="color: green"><%= notice %></p>
-<h1><%= @listing.title %></h1>
-<div>
-  <%= link_to "Edit this listing", edit_listing_path(@listing) %> |
-  <%= link_to "Back to listings", listings_path %>
 
-  <%= button_to "Destroy this listing", @listing, method: :delete %>
-</div>
+<div class="container">
+  <div class="d-flex justify-content-left">
+     <% if @listing.user_id == current_user.id %>
+      <div class="container d-flex justify-content-left my-5 px-0">
+        <%= link_to "Back to listings", listings_path, class:"btn btn-outline-secondary" %>
+        <%= link_to "Edit this listing", edit_listing_path(@listing), class:"btn btn-outline-secondary mx-3" %>
+        <%= button_to "Destroy this listing", @listing, method: :delete, class:"btn btn-outline-danger mx-3" %>
+      </div>
+    <% else %>
+      <div class="container d-flex my-5 px-0">
+        <%= link_to "Back to listings", listings_path, class:"btn btn-outline-secondary" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="bookings-grid">
+    <div class="container" >
+      <div>
+        <div class="container text-center my-5">
+          <h1><%= @listing.title %></h1>
+        </div>
+        <%= cl_image_tag @listing.photo.key, height: 600, width: 800, crop: :fill, class:"listing-image" %>
+      </div>
+      <div class="container mt-5">
+        <h3>Reviews</h3>
+        <% if @listing.reviews.empty? %>
+        <small><em class="text-muted">Be the first one to review this list</em></small>
+        <% end %>
+        <% @listing.reviews.each do |review| %>
+        <div>
+          <% review.rating.times do %>
+            <i class="fas fa-star star-yellow"></i>
+          <% end %>
+          <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+          <p class="mb-0"><%= review.comment %></p>
+        </div>
+        <hr>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="container mb-5">
+      <div class="my-5">
+        <div class="container_booking">
+          <div class="form-container">
+            <%= render 'bookings/form', listing: @listing, booking: Booking.new %>
+          </div>
+        </div>
+    </div>
+
+
+
+    <div class="container review-form">
+      <div class="">
+        <%= render 'reviews/form', listing: @listing, review: Review.new %>
+      </div>
+    </div>
+
+
+  </div>
+  </div>
