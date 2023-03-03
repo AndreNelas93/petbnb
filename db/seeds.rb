@@ -110,3 +110,85 @@ listing.photo.attach(io: file6, filename: "nes.png", content_type: "image/png")
 listing.save!
 
 puts "listing created"
+
+file92 = URI.open("https://res.cloudinary.com/dklcbnwok/image/upload/v1677778555/bonnie-kittle-MUcxe_wDurE-unsplash_uqmrk9.jpg")
+listing = Listing.new(
+  title: "Guinea Pigs' Dream Spot",
+  pet_types: "Guinea Pigs",
+  description: "Perfect spot for the cutest pals.",
+  address: Faker::Address.full_address,
+  max_occupancy: 3,
+  price_per_night: 12,
+  max_stay: 6,
+  user: user
+)
+listing.photo.attach(io: file92, filename: "nes.png", content_type: "image/png")
+listing.save!
+
+puts "listing created"
+
+file8 = URI.open("https://res.cloudinary.com/dklcbnwok/image/upload/v1677778705/mia-anderson-2k6v10Y2dIg-unsplash_ptymuy.jpg")
+listing = Listing.new(
+  title: "Puppies Playground",
+  pet_types: "Dogs",
+  description: "Huge backyard and comfy home for your pups to stay and play.",
+  address: Faker::Address.full_address,
+  max_occupancy: 5,
+  price_per_night: 23,
+  max_stay: 6,
+  user: user
+)
+listing.photo.attach(io: file8, filename: "nes.png", content_type: "image/png")
+listing.save!
+
+puts "listing created"
+
+
+file9 = URI.open("https://res.cloudinary.com/dklcbnwok/image/upload/v1677778875/krys-amon-3ZE-A-6lFdk-unsplash_ou3tjo.jpg")
+listing = Listing.new(
+  title: "Vet With Space for Fishes",
+  pet_types: "Fishes",
+  description: "I'm a vet that wants to take care of others' pets. Due to my short spare time, the best is to take care of fishes.",
+  address: Faker::Address.full_address,
+  max_occupancy: 3,
+  price_per_night: 15,
+  max_stay: 15,
+  user: user
+)
+listing.photo.attach(io: file9, filename: "nes.png", content_type: "image/png")
+listing.save!
+
+puts "listing created"
+
+file91 = URI.open("https://res.cloudinary.com/dklcbnwok/image/upload/v1677779064/eric-han-WJ6fmN1D-h0-unsplash_ocswho.jpg")
+listing = Listing.new(
+  title: "Kat's Place for Cats",
+  pet_types: "Cats",
+  description: "Quiet and warm place with a lot of sunlight. Cats love it!",
+  address: Faker::Address.full_address,
+  max_occupancy: 1,
+  price_per_night: 20,
+  max_stay: 5,
+  user: user
+)
+listing.photo.attach(io: file91, filename: "nes.png", content_type: "image/png")
+listing.save!
+
+puts "listing created"
+
+
+file7 = URI.open("https://res.cloudinary.com/dklcbnwok/image/upload/v1677779636/ALLI80_gmphra.jpg")
+listing = Listing.new(
+  title: "Spacy Home",
+  pet_types: "Aligators",
+  description: "Spacy place for your gators to run and eat some chickens!",
+  address: Faker::Address.full_address,
+  max_occupancy: 2,
+  price_per_night: 35,
+  max_stay: 3,
+  user: user
+)
+listing.photo.attach(io: file7, filename: "nes.png", content_type: "image/png")
+listing.save!
+
+puts "listing created"
